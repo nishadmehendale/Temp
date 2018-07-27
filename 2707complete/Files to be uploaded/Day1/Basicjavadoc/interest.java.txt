@@ -1,0 +1,30 @@
+	import java.util.*;
+	//Class that calculates interest
+	class interest
+	{
+	public static void main(String args [])
+	{
+
+	//Taking necessary inputs of principal amount, rate of interest and number of years
+	Scanner scanner= new Scanner(System.in);
+	System.out.println("Enter principal amount");
+	int principalAmount = scanner.nextInt();
+	System.out.println("Enter rate of interest");
+	float rateOfInterest = scanner.nextFloat();
+	System.out.println("Enter number of years");
+	int numberOfYears = scanner.nextInt();
+	double simpleInterest,compoundInterest,amount;
+
+	//Calculation of interests
+	simpleInterest = (double)(principalAmount*numberOfYears*rateOfInterest)/100;
+	amount = (double)principalAmount*Math.pow((1f+rateOfInterest/100f),n)umberOfYears;
+	compoundInterest = amount - principalAmount;
+
+
+	//Displaying output
+	System.out.println("Simple Interest");
+	System.out.println(simpleInterest);
+	System.out.println("Compound Interest");
+	System.out.println(compundInterest);
+	}
+	}
