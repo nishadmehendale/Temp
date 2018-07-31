@@ -19,15 +19,17 @@ public class MMBankController extends BankController{
 		bc.addNewAccount(ba);
 	}
 	@Override
-	public String presentAccountToView(int accNo) {
+	public BankAcc presentAccountToView(int accNo, String str) {
 		//al.stream(accNo).forEach(accNumber) -> System.out.println(BankAcc);
 		String details = new String();
+		BankAcc tempBA = null;
 		for(BankAcc ba: bc.al) {
-			if(ba.getAccNo() == accNo) {
-				details = ba.toString();
+			if(ba.getAccNo() == accNo && ba.getClass().getName().equals(str)) {
+				tempBA = ba;
+//				System.out.println(ba.getClass().getName());
 			}
 		}
-		return details;
+		return tempBA;
 	}
 	
 	

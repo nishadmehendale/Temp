@@ -9,6 +9,6 @@ public abstract class BankController {
 	}
 	abstract public void createNewCurrentAccount(int accNo, String accNm, int accBal, float creditLimit);
 	abstract public void createNewSavingAccount(int  accNo, String accNm, int accBal, boolean isSalaried);
-	abstract public String presentAccountToView(int accNo);
+	abstract public BankAcc presentAccountToView(int accNo, String str);
 	
 }
