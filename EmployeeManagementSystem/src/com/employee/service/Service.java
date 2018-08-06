@@ -1,6 +1,5 @@
 package com.employee.service;
 
-import java.util.Set;
 import java.util.TreeSet;
 
 import com.employee.bean.Employee;
@@ -15,8 +14,8 @@ public class Service implements EmployeeService{
 	}
 	@Override
 	public TreeSet<Employee> viewAllEmployee() {
-		Set<Employee> employeeSet = dao.viewAllEmployee();
-		return (TreeSet<Employee>) employeeSet;
+//		Set<Employee> employeeSet = dao.viewAllEmployee();
+		return (TreeSet<Employee>) dao.viewAllEmployee();
 	}
 	@Override
 	public Employee getEmployeeByID(int employeeID) {

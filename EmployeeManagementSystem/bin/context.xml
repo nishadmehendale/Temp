@@ -2,8 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
-
 	<bean id="dao" class="com.employee.dao.DAO"></bean>
 	<bean id="service" class="com.employee.service.Service"><property name="dAO" ref="dao" /></bean>
-	<bean id="controller" class="com.employee.controller.AppController"><property name="empService" ref="service" /></bean>
+	<bean id="controller" class="com.employee.controller.AppController"><property name="employeeService" ref="service" /></bean>
 </beans>
