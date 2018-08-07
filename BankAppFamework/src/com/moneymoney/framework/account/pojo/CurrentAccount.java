@@ -3,6 +3,7 @@ package com.moneymoney.framework.account.pojo;
 
 /**
  * 
+ * @author Satyen Singh
  * @author Nishad Mehendale
  *
  *Maintining current account details of all the holders
@@ -23,6 +24,8 @@ public abstract class CurrentAccount extends BankAccount {
 		this.odLimit = odLimit;
 	}
 
+	public abstract String withdraw(double amount);
+	
 	@Override
 	public String toString() {
 		return "CurrentAccount [odLimit=" + odLimit + ", toString()=" + super.toString() + "]";

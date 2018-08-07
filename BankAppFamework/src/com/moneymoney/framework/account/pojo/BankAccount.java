@@ -2,10 +2,9 @@ package com.moneymoney.framework.account.pojo;
 
 /**
  * 
+ * @author Satyen Singh
  * @author Nishad Mehendale
- * 
- * 
- * Class that has basic account details
+ *
  */
 public abstract class BankAccount {
 	private final int accountNumber;
@@ -29,13 +28,6 @@ public abstract class BankAccount {
 		this.accountHolder = accountHolder;
 		this.accountBalance = accountBalance;
 	}
-	
-	//Abstract withdraw method
-	public abstract void withdraw(double amount);
-	
-	public void deposit(double amount) {
-		this.accountBalance += amount;
-	}
 	//For Zero Balance account holders
 	public BankAccount(Customer accountHolder) {
 		this.accountHolder = accountHolder;
@@ -57,12 +49,25 @@ public abstract class BankAccount {
 	public void setAccountBalance(double accountBalance) {
 		this.accountBalance = accountBalance;
 	}
-	
 	//It will give the next account number that will assigned to next account object
 	public static int getNextAccountNumber() {
 		return accountId+1;
 	}
 	
+	//Deposit method 
+	public void deposit(double amount) {
+		if(amount > 0)
+			this.accountBalance += amount;
+	}
+	public String FundTransfer(BankAccount account,double amount) {
+		String result;
+		if(PaymentGateway.transfer(this, account, amount))
+			result = "Transaction Successful";
+		else
+			result = "Transaction Failed";
+		return result;
+	}
+	public abstract String withdraw(double amount);
 	@Override
 	public String toString() {
 		return "BankAccount [accountNumber=" + accountNumber + ", accountHolderName=" + accountHolder

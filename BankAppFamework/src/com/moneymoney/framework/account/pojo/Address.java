@@ -1,8 +1,9 @@
 package com.moneymoney.framework.account.pojo;
 
 /**
+ * @author Satyen Singh
  * @author Nishad Mehendale
- * 
+ *
  *This is an address class to maintain the address of the customer.
  */
 public abstract class Address {
@@ -23,7 +24,7 @@ public abstract class Address {
 	 * @param state
 	 * @param pinCode
 	 * 
-	 * This is a Constructor
+	 * This is a Ctor...
 	 */
 	public Address(String houseNo, String street, String city, String state, int pinCode) {
 		super();

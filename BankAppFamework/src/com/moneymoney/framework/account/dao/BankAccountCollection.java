@@ -6,11 +6,12 @@ import java.util.Set;
 import com.moneymoney.framework.account.pojo.BankAccount;
 
 /**
+ * @author Satyen Singh
  * @author Nishad Mehendale
  *
  *This is class for maintaining the list of all unique account objects.
  *
- *This was created from the warm heart. The Developers are From Capgemini.
+ *This was created from the warm heart. The Developers are From capgemini.
  */
 public abstract class BankAccountCollection {
 	private static Set<BankAccount> bankAccountSet;

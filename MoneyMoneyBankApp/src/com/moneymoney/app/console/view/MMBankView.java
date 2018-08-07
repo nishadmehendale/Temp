@@ -26,7 +26,7 @@ public class MMBankView {
 		System.out.println("1. Add New Savings Account");
 		System.out.println("2. Add New Current Account");
 		System.out.println("3. Show All Accounts");
-		System.out.println("4. Get Next Accountb Number");
+		System.out.println("4. Get Next Account Number");
 		System.out.println("5. Search Account By Account Number");
 		System.out.println("6. Exit");
 		
@@ -44,35 +44,44 @@ public class MMBankView {
 			addNewCurrentAccount();
 			break;
 		case 3:
-			showAllAccounts();
+			viewAllAccounts();
+			break;
+		case 4:
+			getNextAccountNumber();
+			break;
+		case 5:
+			getAccountByAccountNumber();
 			break;
 		default:
 			break;
 		}
 	}
 
-	private void showAllAccounts() {
+	private void getAccountByAccountNumber() {
+	
+	}
+
+	private void getNextAccountNumber() {
+		// TODO Auto-generated method stub
 		
 	}
 
-	private void addNewCurrentAccount() throws IOException {
-		getBasicBankDetails();
-		Double odLimit = Double.parseDouble(bufferedReader.readLine());
-		accountDetails.put("odLimit", odLimit);
-		acceptCustomerDetails();
+	private void viewAllAccounts() {
+		// TODO Auto-generated method stub
+		
 	}
 
-	private void getBasicBankDetails() throws IOException {
+	private void addNewCurrentAccount() {
+		
+	}
+
+	private void addNewSavingsAccount() throws IOException {
 		System.out.println("Enter Account Holder Name: ");
 		String accountHolderName = bufferedReader.readLine();
 		accountDetails.put("accountHolderName", accountHolderName);
 		System.out.println("Enter Account Balance: ");
 		double accountBalance = Double.parseDouble(bufferedReader.readLine());
 		accountDetails.put("accountBalance", accountBalance);
-	}
-
-	private void addNewSavingsAccount() throws IOException {
-		getBasicBankDetails();
 		System.out.println("Enter Salary?(n/y): ");
 		String salary = bufferedReader.readLine();
 		accountDetails.put("salary", salary.equalsIgnoreCase("n")?false:true);
@@ -91,7 +100,6 @@ public class MMBankView {
 		System.out.println("Enter Account Holder Name: ");
 		String accountHolderName = bufferedReader.readLine();
 		accountDetails.put("accountHolderName", accountHolderName);
-		
 	}
 
 	private LocalDate getDate(String dobStr) {

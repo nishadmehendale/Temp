@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Resume Builder : Home</title>
+</head>
+<body>
+<form action="ResumeBuilder" method="get">
+<table>
+<tr><td>First Name:</td><td><input type="text" name="firstName"><br></td></tr>
+<tr><td>Last Name: </td><td><input type="text" name="lastName"><br></td></tr>
+<tr><td>Gender: </td><td><input type="radio" name="gender" value="male">Male<input type="radio" name="gender" value="female">Female<br></td></tr>
+<tr><td>Highest Qualification: </td><td><select name="highestQualification"><option value="primary">Primary</option><option value="secondary">Secondary</option><option value="X">SSC/ X</option><option value="XII">HSC/ XII</option><option value="graduate">Graduate</option><option value="postgrad">Post Graduate</option></select></td></tr>
+<tr><td>Date of Birth: </td><td><input type="date" name="date"><br></td></tr>
+<tr><td>Hobbies: </td><td><select multiple name="hobbies"><option value="cricket">Cricket</option><option value="football">Football</option><option value="reading">Reading</option><option value="dancing">Dancing</option><option value="singing">Singing</option></select></td></tr>
+<tr><td>Address: </td><td><textarea rows="2" cols="50" name="address"></textarea><br></td></tr>
+<tr><td>Email: </td><td><input type="email" name="email"><br></td></tr>
+<tr><td>Website: </td><td><input type="url" name="website"><br></td></tr>
+<tr><td>Contact Number: </td><td><input type="tel" name="contact"><br></td></tr>
+<tr><td>Skills: </td><td><input type="checkbox" name="skills" value="java">Java<input type="checkbox" name="skills" value="c">C<input type="checkbox" name="skills" value="cpp">C++<input type="checkbox" name="skills" value="python">Python<br></td></tr>
+<tr><td><input type="reset" value="Clear"></td><td><input type="submit" value="Submit"></td></tr>
+</table>
+</form>
+</body>
+</html>
