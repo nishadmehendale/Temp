@@ -1,0 +1,15 @@
+Create a webapp which does online shopping  for books having following:- 
+1.Add items to shopping cart 
+2.Delete items for shopping cart 
+3.Display selected items
+
+The home page(home.jsp) will show the list of all products in tabular format. every row will have a single product with "Add To cart" button/hyperlink for every row(like you saw in class of EMS project, where every employee was in tabular format and each employee was occupying a row of a table and each row had "Delete" and "Edit" button/hyperlink).
+
+The "Add To cart" button/hyperlink will add the item in cart, this will be visible on top of the page(may be in a header page) which shows the count of items in the cart.
+
+The Cart that is visible on the top-right corner of the page must be a hyperlink with count of all the items in it.
+
+On click of this cart hyperlink, cart detail page will be displayed(cartdetails.jsp), this page will show the list of all products added to the cart in tabular format. every row will have a single product with "Remove from cart" button/hyperlink for every row(like you saw in class of EMS project, where every employee was in tabular format and each employee was occupying a row of a table and each row had "Delete" and "Edit" button/hyperlink).
+
+On click of the "Remove from cart button" the product will be removed from cart.
+

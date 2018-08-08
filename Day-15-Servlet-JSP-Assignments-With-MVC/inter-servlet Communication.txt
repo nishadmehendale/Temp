@@ -1,0 +1,19 @@
+MyDocs is an online document sharing application. The users needs to login with their username and password to use the services of the application. MyDocs team have approached you to create the login module for the application.The users must login through a login form. If login is success they should be forwarded to the success page which prints a greeting message “Hello <user>” where <user> is the username entered by the user. The user name/password should be admin/admin for successfully login into the application. If the username/password is incorrect the user should be forwarded to error page with the error message “username (or) password is incorrect”. 
+
+Design:
+Design the components as stated below.
+
+Login.html :  Should have two text fields 
+	User Name: Text Field
+	Password:  Password Field
+LoginController : The login servlet should process the login action and validate the user name and password. (Hint : Use doPost to handle the login action).
+	If the user name and password is admin/admin the request redirected to Success page.
+	If user name and password is wrong the request to be forwarded to the Error page.
+success.jsp : This is the success page for the application which should display the greetings “Hello <user>”
+error.jsp :  Used for displaying error message.
+
+
+header.jsp : To display the page header  “Welcome to the MyDocs Portal – A safe way of sharing documents”
+footer.jsp :  To display the page footer. “copyright 2018 – Capgemini private limited” 
+
+NOTE:- All the pages in the application should have a header and footer which can be written as separate jsp page and included in other pages as needed.

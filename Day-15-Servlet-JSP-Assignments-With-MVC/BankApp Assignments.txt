@@ -1,0 +1,134 @@
+0. Home Page
+
+home.jsp will be the home page, that will have options like Add New Account, View All Accounts, Search, Withdraw, Deposit and Fund Transfer.
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+1.AddNewAccount.jsp - customer details and Account details.
+
+	1.AccountHolderName -(ie customer name) - 1 text box
+	2.CustomerEmailId    -			- Accept only email address
+	3.CustomerDOB	     - min 18 years old - validation
+        4.CustomerPhoneNumber -only numbers of 10 - validation 
+        5.AccountType - drop down - Savings and Current.
+        if account type is savings 	
+		5.1 - Salaried /not salaried - Radio button
+			if it is salaried minimum balance should be zero.
+		5.2 - Enter the account balance.	
+
+	if  not salaried 
+		5.2 - user must enter minimum balance - 5000 - Accept it
+
+        if account type is current
+		5.1 -Enter the Overdraft limit 
+		5.2 - Enter account balance that should be min 10000.(validation)
+
+Add the submit and on click of this should show success message like "Created the account"and
+display the account number with a "Back" button that will redirect the user to Home page(home.jsp)
+
+reset button -To reset all the fields.
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+2.searchAccount.jsp
+
+1 textbox - Enter the account number.
+
+submit it has to show the viewaccount.html page which will display the account deatils of the specified account number.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+3.viewaccount.jsp
+
+1. Display all the details of account in tabular form
+
+The columns are
+	1. AccountNumber
+	2. CustmerID
+	3. AccountType
+	4. AccountBalance
+	5. Overdraft limit
+	6. salaryAccount ? 
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Design and structure of the page should be decided by the participants.	
+
+
+
+4.ViewAllCustomers.jsp
+-----------------------
+Display all the details of account in tabular form
+
+The columns are
+	1. CustomerID
+	2. CustomerName
+	3. AccountNumber
+	4. Email ID
+	5. PhoneNo 
+	6. DateOfBirth
+	7. Hyperlink for updating customer detail which on click will show "UpdateCustomerForm.jsp"
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@	
+
+5. UpdateCustomerForm.jsp
+
+1.CustomerID- should be readonly.
+2.CustomerName- 
+3.AccountNumber - Drop down 
+4. Email ID
+5. PhoneNo 
+6. DateOfBirth
+
+From 2 to 6 values should be displayed in text box for editing. Except customerID and AccountNo.
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+6. WithdrawForm.jsp
+
+The details are 
+	1. accountNo
+	2. AmounttoWithdraw
+	3. Create a Button with Withdraw after successfuly withdraw it should show page with
+details as follows
+	1.No of currency Notes- 2
+	2.Denomination :500 - (If Amount to be withdraw was 1000 Rs)
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+7. DepositForm.jsp
+
+The details are 
+	1. AccountNumber
+	2. AmounttoDeposit
+	3. Create a Button Deposit and after successful deposit available balance should be displayed
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+8.FundTransfer.jsp
+
+The details are
+	1.FromAccountNo
+	2.ToAccountNo
+	3.AmountToTransfer
+	4.Remarks
+	
+Date of transfer should be automatically added the current date at the server side.
+
+5. Create a button "Tranfer" and should display a message like "Fund Transfered Successfully".
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+NOTE:- Every page will have "Home" hyperlink that will take user to home.jsp.
+
+
+
+
+
+	
