@@ -28,19 +28,63 @@ display the account number with a "Back" button that will redirect the user to H
 <head>
 <meta charset="ISO-8859-1">
 <title>MM Bank</title>
+
 </head>
 <body>
 <div align="center">
 <h3>Enter Account Holder Details</h3>
-<form action="saveAccount"><table>
-<tr><td>Name: 			</td><td><input type="text" name="customerName"> </td></tr>
-<tr><td>Email-id: 		</td><td><input type="email" name="customerEmail"> </td></tr>
-<tr><td>Date of Birth:	</td><td><input type="date" name="dob" min="2010-01-08"></td></tr>
-<tr><td>Contact Number: </td><td><input type="tel" min=10 max=10></td></tr>
-<tr><td>Account Type:	</td><td><select name="accountType"><option value="saving account" selected="selected">${saving account}</option><option value="current">Current Account</option></select></td></tr>
-<tr><td></td><td><jstl:if test='${accountType eq "saving account"}'><input type="radio" name="salary" value="true">Salaried<input type="radio" name="salary" value="false">Not Salaried</jstl:if></td></tr>	
-</table></form>
+<form id="basic" method="post">
+Name: 			<input type="text" name="customerName"> <br>
+Email-id: 		<input type="email" name="customerEmail"> <br>
+Date of Birth:	<input type="date" name="dob" min="2010-01-08"><br>
+Contact Number: <input type="tel" min=10 max=10><br>
+Account Type:	<select id="accountType"  onchange="setButton();">
+<option value="default" selected="selected">----SELECT----</option>
+<option value="savingaccount">Saving Account</option>
+<option value="currentaccount" >Current Account</option>
+</select><br>
+<div id="sa" style="display:none" onchange="setBalance();">
+<input type="radio" id="salary" name="salary" value="yessss" >Salary<input type="radio" id="salary" name="salary" value="no">Not Salaried
+</div>
+<div id="bal" style="display:none">
+Enter Opening Balance: <input type="number" min=5000>
+</div>
+<div id="salbal" style="display:none">
+Enter Opening Balance: <input type="number" min=0>
+</div>
+<div id="ca" style="display:none">
+Enter Over Draft Limit:<input type="number" min=0>
+Enter account balance:<input type="number" min=10000>
+</div>
+<input type="submit" value="Create Account">
+</form>
 </div>
 </body>
-</html>
+<script>
+function setButton(){
+	var dropdown = document.getElementById("accountType");
+	var type= dropdown.options[dropdown.selectedIndex].value;
+	
+	if(type == "savingaccount"){
+		document.getElementById("sa").style.display = "block";
+		document.getElementById("ca").style.display = "none";
+		var drop = document.getElementByName("salary");
+		var s = drop.options[drop.selectedIndex].value;
 
+		if(s == "yessss"){
+			document.getElementById("salbal").style.display = "block";	
+		}
+		else{
+			document.getElementById("bal").style.display = "block";
+		}
+	}else if(type == "currentaccount"){
+		document.getElementById("ca").style.display = "block";
+		document.getElementById("sa").style.display = "none";
+	}
+else if(type == "default"){
+		document.getElementById("sa").style.display = "none";
+		document.getElementById("ca").style.display = "none";
+	} 
+}
+</script>
+</html>

@@ -1,6 +1,8 @@
 package com.mmbank.controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +22,21 @@ public class AppController extends HttpServlet {
 		switch (action) {
 		case "/addNewAccount.app":
 			response.sendRedirect("addNewAccount.jsp");
+			break;
+		case "/add.app":
+			String choice = request.getParameter("accountType");
+			System.out.println(choice);
+			RequestDispatcher dispatcher = null;
+			
+			if(choice.equals("savingaccount")) {
+				dispatcher = request.getRequestDispatcher("saving.jsp");
+			}else if(choice.equals("currentaccount")) {
+				dispatcher = request.getRequestDispatcher("current.jsp");
+			}
+			dispatcher.forward(request, response);
+			break;
+		case "/test.app":
+			response.sendRedirect("test.jsp");
 			break;
 		default:
 			response.sendRedirect("home.jsp");
